@@ -1,0 +1,561 @@
+﻿<!doctype html>
+<html lang="zh">
+<head>
+    <meta -equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>EOS </title>
+    <meta -equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="wap-font-scale" content="no">
+    <link rel="stylesheet" href="../static/home/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="../static/home/css/app.css?v=5.8">
+    <link rel="stylesheet" href="../static/home/css/iconfont.css">
+    <style>
+        select {
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 14px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .login_laa {
+    width: 88%;
+    height: 3.4rem;
+    color: #fff;
+    display: block;
+    margin-left: 6%;
+    border-radius: 3rem;
+    line-height: 3.4rem;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    box-sizing: border-box;
+    border: 2px #fff solid;
+}
+
+        .z-mask {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 99999;
+        }
+
+        .notice {
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            width: 82%;
+            min-height: 20rem;
+            padding: 1rem 4%;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .notice-txt {
+            width: 100%;
+            word-wrap: break-word;
+            word-break: normal;
+        }
+
+        .notice-txt p {
+            width: 100%;
+            line-height: 1.2rem;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        .notice-tit {
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .notice-btn {
+            width: 80%;
+            margin: 2rem auto 0;
+            height: 2.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 8px;
+            background-color: #3FDADC;
+            cursor: pointer;
+        }
+        
+body {
+margin: 0;
+    overflow: hidden;
+    /* background-color: #05a971; */
+    background: url(../static/home/img/newbj.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background span {
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 20vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation-name: move;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.background span:nth-child(1) {
+  color: #acf0ff;
+  top: 44%;
+  left: 97%;
+  animation-duration: 15s;
+  animation-delay: -13.8s;
+  transform-origin: 11vw -22vh;
+  box-shadow: 40vmin 0 10.12735945vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #acf0ff;
+  top: 93%;
+  left: 8%;
+  animation-duration: 13.8s;
+  animation-delay: -10.9s;
+  transform-origin: 10vw 23vh;
+  box-shadow: 40vmin 0 12.7346672971vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #acf0ff;
+  top: 14%;
+  left: 41%;
+  animation-duration: 15.9s;
+  animation-delay: -6.7s;
+  transform-origin: -9vw -24vh;
+  box-shadow: -40vmin 0 11.4923952406vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #acf0ff;
+  top: 52%;
+  left: 75%;
+  animation-duration: 14.3s;
+  animation-delay: -12.6s;
+  transform-origin: 16vw 25vh;
+  box-shadow: 40vmin 0 13.3657534039vmin currentColor;
+}
+.background span:nth-child(5) {
+  color: #acf0ff;
+  top: 7%;
+  left: 5%;
+  animation-duration: 15.9s;
+  animation-delay: -10s;
+  transform-origin: 8vw 3vh;
+  box-shadow: -40vmin 0 13.3942178273vmin currentColor;
+}
+.background span:nth-child(6) {
+  color: #acf0ff;
+  top: 35%;
+  left: 1%;
+  animation-duration: 11.6s;
+  animation-delay: -6s;
+  transform-origin: 0vw 17vh;
+  box-shadow: -40vmin 0 7.6304875279vmin currentColor;
+}
+.background span:nth-child(7) {
+  color: #acf0ff;
+  top: 42%;
+  left: 84%;
+  animation-duration: 11s;
+  animation-delay: -6.9s;
+  transform-origin: 11vw -8vh;
+  box-shadow: 40vmin 0 13.6665321499vmin currentColor;
+}
+.background span:nth-child(8) {
+  color: #acf0ff;
+  top: 53%;
+  left: 95%;
+  animation-duration: 15s;
+  animation-delay: -10.9s;
+  transform-origin: 25vw 15vh;
+  box-shadow: 40vmin 0 13.2849881717vmin currentColor;
+}
+.background span:nth-child(9) {
+  color: #acf0ff;
+  top: 75%;
+  left: 67%;
+  animation-duration: 11.7s;
+  animation-delay: -13.9s;
+  transform-origin: -11vw -3vh;
+  box-shadow: 40vmin 0 7.2158804055vmin currentColor;
+}
+.background span:nth-child(10) {
+  color: #acf0ff;
+  top: 59%;
+  left: 51%;
+  animation-duration: 12.1s;
+  animation-delay: -11.7s;
+  transform-origin: -5vw -7vh;
+  box-shadow: -40vmin 0 7.4269772253vmin currentColor;
+}
+.background span:nth-child(11) {
+  color: #acffbe;
+  top: 80%;
+  left: 91%;
+  animation-duration: 13.4s;
+  animation-delay: -5.9s;
+  transform-origin: 7vw -19vh;
+  box-shadow: 40vmin 0 11.2741559637vmin currentColor;
+}
+.background span:nth-child(12) {
+  color: #acffbe;
+  top: 68%;
+  left: 97%;
+  animation-duration: 15.8s;
+  animation-delay: -8.2s;
+  transform-origin: 24vw 3vh;
+  box-shadow: 40vmin 0 11.2552482722vmin currentColor;
+}
+.background span:nth-child(13) {
+  color: #acffbe;
+  top: 69%;
+  left: 46%;
+  animation-duration: 10.4s;
+  animation-delay: -11.5s;
+  transform-origin: 13vw 24vh;
+  box-shadow: -40vmin 0 6.2939412125vmin currentColor;
+}
+.background span:nth-child(14) {
+  color: #acffbe;
+  top: 98%;
+  left: 63%;
+  animation-duration: 14.2s;
+  animation-delay: -3s;
+  transform-origin: -13vw -15vh;
+  box-shadow: -40vmin 0 10.5039271244vmin currentColor;
+}
+.background span:nth-child(15) {
+  color: #acffbe;
+  top: 12%;
+  left: 20%;
+  animation-duration: 14s;
+  animation-delay: -6.8s;
+  transform-origin: 7vw 20vh;
+  box-shadow: 40vmin 0 10.924056322vmin currentColor;
+}
+.background span:nth-child(16) {
+  color: #acffbe;
+  top: 29%;
+  left: 20%;
+  animation-duration: 11s;
+  animation-delay: -14.4s;
+  transform-origin: -20vw 4vh;
+  box-shadow: -40vmin 0 13.3859956789vmin currentColor;
+}
+.background span:nth-child(17) {
+  color: #acffbe;
+  top: 88%;
+  left: 87%;
+  animation-duration: 10.7s;
+  animation-delay: -3.7s;
+  transform-origin: -11vw 12vh;
+  box-shadow: 40vmin 0 14.8726292689vmin currentColor;
+}
+.background span:nth-child(18) {
+  color: #acffbe;
+  top: 57%;
+  left: 35%;
+  animation-duration: 10.1s;
+  animation-delay: -13.6s;
+  transform-origin: -19vw -1vh;
+  box-shadow: 40vmin 0 8.5771411832vmin currentColor;
+}
+.background span:nth-child(19) {
+  color: #acffbe;
+  top: 11%;
+  left: 37%;
+  animation-duration: 11.5s;
+  animation-delay: -10.1s;
+  transform-origin: -20vw 22vh;
+  box-shadow: 40vmin 0 8.1729042124vmin currentColor;
+}
+.background span:nth-child(20) {
+  color: #acffbe;
+  top: 53%;
+  left: 60%;
+  animation-duration: 12.3s;
+  animation-delay: -11.3s;
+  transform-origin: 10vw -1vh;
+  box-shadow: 40vmin 0 13.5347652223vmin currentColor;
+}
+
+@keyframes  move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+    
+<div class="login_logo">
+    <img src="../static/home/img/lg.png">
+    <!--<select name="lang" id="lang">-->
+ <!--<option value="en" >印度尼西亚语</option>-->
+ <!--<option value="yd" >阿拉伯语</option>-->
+
+
+</div>
+
+
+
+
+
+<div class="login_form">
+    <form name="form" method="post" id="form">
+        <div class="input-container">
+            <div class="input-control">
+                <img src="../static/home/img/shouji-2%402x.png" style="width: 20px;position: absolute;margin: 10px;">
+                <!--<i class="icon iconfont icon-mobile"></i>-->
+<!--<input class="inputfield" type="text" id="prefix" name="prefix" value="+91" readonly>-->
+<input class="inputfield" type="text" id="mobile" name="mobile" placeholder="Mobile Number" value="+91">
+            </div>
+        </div>
+        <div class="input-container">
+            <div class="input-control">
+                <!--<i class="icon iconfont icon-mima"></i>-->
+                <img src="../static/home/img/mima%402x.png" style="width: 20px;position: absolute;margin: 10px;">
+                <input class="inputfield" type="password" id="password" name="password" placeholder="Password">
+            </div>
+        </div>
+       <div class="row loginfield" style="padding-top: 10px">
+    <div style="display: inline-block;color:#fff">
+        <input type="checkbox" id="remember_password">
+        Remember Password    </div>
+    <a style="float: right; color: #fff;display: block" href="https://www.eosvip.site/login/recover">
+        Forgot Password?    </a>
+</div>
+<div class="center">
+    <div class="space-20"></div>
+    <a class="btn_submit_my login_la">Login</a>
+</div>
+</form>
+<a href="https://www.eosvip.site/login/register" class="login_laa" style="margin-top: 1rem;">Register</a>
+
+</div>
+<div class="z-mask" style="display: none;"></div>
+
+<!--<div class="background">-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--  <span></span>-->
+<!--</div>-->
+
+<script type="text/javascript" src="../static/home/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../static/home/js/layer.js"></script>
+<script>
+ $("#lang").change(function(){
+  $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+  $.post(
+    "https://www.eosvip.site/login/chatlang",
+    {
+     lang:$("#lang").val()
+    },
+    function(d){
+     if(d){
+      console.log(d);
+      location.reload(); //重新刷新页面
+     }
+    }
+  );
+ });
+</script>
+<script type="text/javascript">
+
+    var _submit = true;
+    $(".btn_submit_my").click(function () {
+        if (_submit == true) {
+            _submit = false;
+            var loading = //loading
+                  layer.open({
+                    type: 2
+                    ,content: 'loading'
+                  });
+                  
+        } else {
+            return false;
+        }
+        var mobile = $("input[name='mobile']").val();
+        var password = $("input[name='password']").val();
+       if (mobile.length == 0) {
+    layer.close(loading);
+    layer.open({
+        content: 'Enter Mobile Number...'
+        ,skin: 'msg'
+        ,time: 2 
+    });
+    _submit = true;
+    return false;
+}
+if (password.length == 0) {
+    layer.close(loading);
+    layer.open({
+        content: 'Enter Password...'
+        ,skin: 'msg'
+        ,time: 2 
+    });
+    _submit = true;
+    return false;
+}
+
+        var isSave = document.getElementById('remember_password').checked;
+        if (isSave) {
+            if (mobile != "" && password != "") {
+                setCookie('mobile', mobile, 7); //7day
+                setCookie('password', password, 7); //7day
+            }
+        } else {
+            clearAllCookie();
+        }
+        var _token = "5jLvgPoj8kcAtrElm4AoCvCjSrO7tDEfaM327iqp";
+        var data = {
+            mobile: mobile,
+            password: password,
+            _token: _token
+        };
+        $.post("https://www.eosvip.site/login/index", data, function (result) {
+            layer.close(loading)
+            if (result.code == 200) {
+                
+                layer.close(loading);
+                layer.open({
+                    content: 'Login Succeed...'
+                    ,skin: 'msg'
+                    ,time: 2 
+                });
+               
+                location.href = "https://www.eosvip.site";
+                
+            } else {
+                 layer.open({
+                    content: result.msg
+                    ,skin: 'msg'
+                    ,time: 2 
+                });
+                  _submit = true;
+                return false;
+            }
+        }, "json");
+    });
+
+   
+    function clearAllCookie() {
+        var keys = document.cookie.match(/[^ =;]+(?=\=)/g);
+        if (keys) {
+            for (var i = keys.length; i--;)
+                document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString()
+        }
+    }
+
+document.getElementById('prefix').onkeydown = function(e) {
+  if (this.selectionStart <= 3 && e.key != 'Backspace' && e.key != 'Delete') {
+    return false;
+  }
+};
+
+
+
+
+
+    function disclaimer() {
+        var data = {_token: "5jLvgPoj8kcAtrElm4AoCvCjSrO7tDEfaM327iqp"};
+        $.post("https://www.eosvip.site/login/disclaimer", data, function (result) {
+            if (result.code == 200) {
+                var html = '';
+                html += '<div class="notice">';
+                html += '<div class="notice-tit">' + result.data.title + '</div>';
+                html += '<div class="notice-txt">' + result.data.content + '</div>';
+                html += '<div class="notice-btn">OK</div>';
+                html += '</div>';
+                $(".z-mask").html(html).show();
+            }
+            return false;
+        }, "json");
+    }
+
+    $("body").on('click', '.notice-btn', function () {
+        setCookie('disclaimerState', true);
+        $(".z-mask").html('').hide();
+    });
+
+    $(function () {
+        var disclaimerState = getCookie('disclaimerState');
+        var oUser = getCookie('mobile');
+        var oPswd = getCookie('password');
+        if (oUser && oPswd) {
+            $(".inputfield").val(oUser);
+            $("#password").val(oPswd);
+            document.getElementById('remember_password').checked = true;
+        }
+        // if (!disclaimerState) {
+        //     disclaimer();
+        // }
+    });
+
+
+    function setCookie(name, value, day) {
+        var date = new Date();
+        date.setDate(date.getDate() + day);
+        document.cookie = name + '=' + value + ';expires=' + date;
+    }
+
+    function getCookie(name) {
+        var reg = RegExp(name + '=([^;]+)');
+        var arr = document.cookie.match(reg);
+        if (arr) {
+            return arr[1];
+        } else {
+            return '';
+        }
+    }
+
+    function delCookie(name) {
+        setCookie(name, null, -1);
+    }
+</script>
+</body>
+</html>
